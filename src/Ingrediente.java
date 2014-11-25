@@ -7,14 +7,7 @@ public class Ingrediente {
 	private int cantidadUnidad;
 	private boolean enGramos; 
 	
-	public Ingrediente (String nombreIngrediente, int cantidadGramos, int cantidadUnidad, boolean enGramos) {
 
-		this.nombreIngrediente=nombreIngrediente;
-		this.cantidadGramos=cantidadGramos;
-		this.cantidadUnidad=cantidadUnidad;
-		this.enGramos=enGramos;
-
-	}
 
 	public void setNombreIngrediente(String nombreIngrediente)
     {

@@ -39,55 +39,73 @@ boolean opcion = false;
 
  			System.out.println("Cantidad en Gramos:");
  			int can1=sc.nextInt();
- 			ingre.setCantidadGramos(can1);
- 			if (can1!= null || 0)
- 			{
- 				opcion=true
- 				ingre.setEnGramos(opcion);
- 			}
- 			
- 			
- 			System.out.println("Cantidad en Unidades: ");
- 			int can2=sc.nextInt();
- 			ingre.setCantidadUnidad(can2);
+ 			char enGramos;
+				do{
+					System.out.println("La cantidad es en gramos?(Y/N)");
+					enGramos = sc.next().charAt(0);
+					switch (enGramos) {
+						case 'Y':
+							ingre.setEnGramos(true);
+							System.out.println("Dame la cantidad en gramos");
+							ingre.setCantidadGramos(sc.nextInt());
+							break;
+						case 'N':
+							ingre.setEnGramos(false);
+							System.out.println("Dame la cantidad en unidades");
+							ingre.setCantidadUnidad(sc.nextInt());
+							break;
+						default:
+							System.out.println("Lo siento, inténtalo otra vez");
+							break;
+					}
+				} while((enGramos != 'Y') && (enGramos != 'N'));
 
-
- 			
-
-
- 			ingrediente.add(new Ingrediente(ingre)
+ 			ingredientes.add(ingre);
 
  		}
 
  		System.out.println("Preparacion: ");
  		String pre=sc.next();
+ 		rc.setPreparacion(pre);
  		
 
- 		recetas.add(new Receta(nom_rc,ingrediente,pre))
+ 		recetas.add(rc);
 
 
  	}
 
 
 
- 	    String ruta = "recetas.txt";
-        File archivo = new File(ruta);
-        BufferedWriter bw;
-        if(archivo.exists()) {
-            bw = new BufferedWriter(new FileWriter(archivo));
-            bw.write("El fichero de texto ya estaba creado.");
-        } else {
-            bw = new BufferedWriter(new FileWriter(archivo));
-            bw.write("Acabo de crear el fichero de texto.");
-        }
-        bw.close();
+ 	   File archivo = new File ("/home/zubiri/examen_receta/src/recetas.txt");
+		FileWriter fw = new FileWriter (archivo);
 
+		for (int k=0; k<recetas.size(); k++) {
 
-    }
+			fw.write(recetas.get(k).getNombreReceta() + ";");
+
+			for (int l=0; l<ingredientes.size(); l++) {
+				fw.write(ingredientes.get(l).getNombreIngrediente() + "*");
+				fw.write(ingredientes.get(l).getCantidadUnidad() + "*");
+				fw.write(ingredientes.get(l).getCantidadGramos() + "*");
+	
+				if (l == ingredientes.size() - 1) {
+				fw.write(ingredientes.get(l).getEnGramos() + ";");
+				}
+				else {
+				fw.write(ingredientes.get(l).getEnGramos() + "#");
+				}
+
+			}
+
+			fw.write(recetas.get(k).getPreparacion() + "\n");
+	
+		}
+
+    
     
 
 
-		
+		/*
 		FileReader fr = new FileReader("recetas.txt");
     	BufferedReader br = new BufferedReader(fr); 
 	
@@ -117,7 +135,7 @@ boolean opcion = false;
 	            
 	        //Vaciar el ArrayList
 	    	recetas.clear();
-
+*/
 
 
   }

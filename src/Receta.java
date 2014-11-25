@@ -6,13 +6,6 @@ public class Receta {
 	private String preparacion;
 
 
-	public Receta (String nombreReceta, ArrayList<Ingrediente> ingredientes, String preparacion) {
-
-		this.nombreReceta=nombreReceta;
-		this.ingredientes=ingredientes;
-		this.preparacion=preparacion;
-	}
-
 	public void setNombreReceta(String nombreReceta)
     {
         this.nombreReceta=nombreReceta;
