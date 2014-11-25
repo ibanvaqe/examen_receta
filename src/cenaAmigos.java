@@ -55,7 +55,7 @@ boolean opcion = false;
  			
 
 
- 			ingrediente.add(new Ingrediente(ing,can1,can2,opcion)
+ 			ingrediente.add(new Ingrediente(ingre)
 
  		}
 
