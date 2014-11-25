@@ -13,8 +13,8 @@ boolean opcion = false;
  	System.out.println("Numeros de recetas que vas a utilizar: ");
  	n_recetas=sc.nextInt();
 
- 	Receta rc = new Receta("",,"");
- 	Ingrediente ingre = new Ingrediente("",,,);
+ 	
+ 
 
  	ArrayList <Ingrediente> ingredientes = new ArrayList <Ingrediente>();
 
@@ -22,27 +22,34 @@ boolean opcion = false;
 
  	for (int x=0;x<n_recetas;x++)
  	{
+ 		Receta rc = new Receta();
  		System.out.println("Nombre de receta: ");
  		nom_rc=sc.next();
+ 		rc.setNombreReceta(nom_rc);
 
  		System.out.println("Numero de Ingredientes: ");
  		num_ing=sc.nextInt();
  		for (int y=0;y<num_ing;y++)
  		{
+ 			Ingrediente ingre = new Ingrediente();
  			System.out.println("Ingrediente");
  			String ing=sc.next();
+ 			ingre.setNombreIngrediente(ing);
 
 
  			System.out.println("Cantidad en Gramos:");
  			int can1=sc.nextInt();
+ 			ingre.setCantidadGramos(can1);
  			if (can1!= null || 0)
  			{
  				opcion=true
+ 				ingre.setEnGramos(opcion);
  			}
  			
  			
  			System.out.println("Cantidad en Unidades: ");
  			int can2=sc.nextInt();
+ 			ingre.setCantidadUnidad(can2);
 
 
  			
@@ -95,7 +102,7 @@ boolean opcion = false;
         	String[] array_separados2 = new String[contador_token2];
 			 for (int i=0;i<contador_token1;i++)
             {
-            	for (int l=0;l<ontador_token2;i++)
+            	for (int l=0;l<contador_token2;i++)
 
                 array_separados[i] = st.nextToken();
             }
