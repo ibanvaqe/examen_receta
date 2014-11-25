@@ -1,0 +1,2 @@
+tortilla patata;huevo*-1*6*false#patata*-1*4*false#sal*5*-1*true;freir patatas cortadas, batir huevos, mezclar todo y volcar en la sartén.
+filetes con tocino;filetes*-1*2*false#tocino*200*-1*true#sal*5*-1*true;cortar filetes , trozear tocino, mezclar todo y volcar en la sartén
